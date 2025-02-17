@@ -1,0 +1,9 @@
+{
+    "companies": [
+      { "id": "1", "name": "Goerges Grocery", "motto": "The Best Grocery Store in the west", "location": "San Francisco, CA" },
+      { "id": "2", "name": "Betty's Bees", "motto": "If its Bees, its gotta be Bettys", "location": "Remote"}
+    ],
+    "profile": {
+      "name": "typicode"
+    }
+  }

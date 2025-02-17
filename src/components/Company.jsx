@@ -1,11 +1,23 @@
+import axios from 'axios'
+
 const Company = (props) => {
-    const name = "Default Company Name"
-    const motto = "No Motto provided"
+    const name = "No Company Name Provided"
+    const salary = "No Salary provided"
+    const location = "No Location provided"
+
+    const deleteHit = (event) => {
+        // event.preventDefault()
+        console.log('button clicked', event)
+        axios
+          .delete(`http://localhost:3000/companies/${event.target.id}`, event.target.id)
+      }
+
     return(
-       <li className="card" key={props.id}>
-            <h2>{props.name || name}</h2>
-            <span>{props.motto || motto}</span>
-            <p>{props.location}</p>
+       <li>
+            <h2>{props.name || name} | {props.salary || salary} | {props.location || location}  <button onClick={deleteHit}>x</button></h2>
+            {/* <span>{props.salary || salary}</span>
+            <span>{props.location || location}</span> */}
+           
        </li>
     )
 }

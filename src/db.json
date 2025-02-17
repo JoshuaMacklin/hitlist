@@ -1,9 +1,25 @@
 {
-    "companies": [
-      { "id": "1", "name": "Goerges Grocery", "motto": "The Best Grocery Store in the west", "location": "San Francisco, CA" },
-      { "id": "2", "name": "Betty's Bees", "motto": "If its Bees, its gotta be Bettys", "location": "Remote"}
-    ],
-    "profile": {
-      "name": "typicode"
+  "companies": [
+    {
+      "id": "1",
+      "name": "Goerges Grocery",
+      "salary": "152k",
+      "location": "San Francisco, CA"
+    },
+    {
+      "id": "2",
+      "name": "Betty's Bees",
+      "salary": "200k",
+      "location": "Remote"
+    },
+    {
+      "id": "c89d",
+      "name": "Gregs Crab Shack",
+      "location": "Remote",
+      "salary": "110k"
     }
+  ],
+  "profile": {
+    "name": "typicode"
   }
+}

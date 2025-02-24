@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import axios from 'axios'
 
 const Company = (props) => {
@@ -5,15 +6,16 @@ const Company = (props) => {
     const salary = "No Salary provided"
     const location = "No Location provided"
 
-    const deleteHit = (event) => {
-        // event.preventDefault()
-        console.log('button clicked', event)
-        axios
-          .delete(`http://localhost:3000/companies/${event.target.id}`, event.target.id)
+    const deleteHit = () => {
+        console.log('button clicked', props)
+        if(window.confirm("Delete this job?")) {
+          axios
+          .delete(`http://localhost:3000/companies/${props.id}`).then(window.location.reload())
+        }
       }
 
     return(
-       <li>
+       <li key={props.name}>
             <h2>{props.name || name} | {props.salary || salary} | {props.location || location}  <button onClick={deleteHit}>x</button></h2>
             {/* <span>{props.salary || salary}</span>
             <span>{props.location || location}</span> */}

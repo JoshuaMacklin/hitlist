@@ -39,11 +39,13 @@ function App() {
   }
 
   useEffect(() => {
-    console.log('effect')
     axios
-      .get('http://localhost:3000/companies')
+      .get('http://localhost:3000/companies') 
+      .catch(function (error) {
+        console.log(error.toJSON());
+        alert('is the json server running?')
+      })
       .then(response => {
-        console.log('promise fulfilled')
         setCompanies(response.data)
       })
   }, [])
@@ -89,8 +91,8 @@ function App() {
       </div> */}
       <div>
           <ul>
-            {companies.map(element => 
-              <Company className="card" name={element.name} salary={element.salary} location={element.location} key={element.id}/>
+            {companies.map((job, index) => 
+              <Company className="card" name={job.name} salary={job.salary} location={job.location} id={job.id} key={index}/>
             )}
           </ul>
       </div>
